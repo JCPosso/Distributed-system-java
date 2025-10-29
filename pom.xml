@@ -9,13 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>co.edu.escuelaing</groupId>
-	<artifactId>distributed-system</artifactId>
+	<artifactId>distributedsystem</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-  <modules>
-    <module>load-balancer</module>
-    <module>backend-service</module>
-  </modules>
 	<name>distributed-system</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
