@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   load-balancer:
     build: ./loadbalancer
@@ -23,7 +21,7 @@ services:
       - LOADBALANCER_URL=http://load-balancer:8080
 
   backend2:
-    build: ./backend-service
+    build: ./backendservice
     container_name: backend2
     ports:
       - "8082:8081"
