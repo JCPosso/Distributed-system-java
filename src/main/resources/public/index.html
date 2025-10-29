@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" >
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css">
+<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <title>Message App</title>
+</head>
+<body>
+<div class="box">
+    <div class="container">
+        <h1 class="text-center text-light font-weight-bold">MessageApp</h1>
+        <br/>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-10">
+                <form id="myform" class="card card-sm" >
+                    <div class="card-body row no-gutters align-items-center">
+                        <!--end of col-->
+                        <div class="col-md-3">
+                            <input id="data-name" name="data-name" class="form-control form-control-lg form-control-borderless" placeholder="Type your name">
+                        </div>
+                        <!--end of col-->
+                        <div class="col">
+                            <input id="data-message" name="data-message" class="form-control form-control-lg form-control-borderless" placeholder="Type a message">
+                        </div>
+                        <!--end of col-->
+                        <div class="col-auto">
+                            <button id="btn-success" class="btn btn-lg btn-warning">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <!--end of col-->
+                    </div>
+                </form>
+                <div class="overflow-auto mh-60" style="height:350px;">
+                    <table id="mytable" class="table table-secondary">
+                        <thead>
+                        <tr>
+                            <th scope="col" data-field="id">id</th>
+                            <th scope="col" data-field="user">User</th>
+                            <th scope="col" data-field="message">Message</th>
+                            <th scope="col" data-field="date">date</th>
+                        </tr>
+                        </thead>
+                        <tbody id="demo" style="overflow-y: scroll;"></tbody>
+                    </table>
+                </div>
+            </div>
+            <!--end of col-->
+        </div>
+    </div>
+</div>
+</body>
+</html>
