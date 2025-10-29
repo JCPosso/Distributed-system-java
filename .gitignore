@@ -1,10 +1,23 @@
-HELP.md
+# Maven build
 target/
-.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-### STS ###
+# Mantener Maven Wrapper en el repo
+mvnw
+mvnw.cmd
+!.mvn/wrapper/maven-wrapper.jar
+
+# Compilados, artefactos y logs
+*.class
+*.log
+hs_err_pid*
+*.jar
+*.war
+*.ear
+
+# IDEs / editores
+### STS / Eclipse ###
 .apt_generated
 .classpath
 .factorypath
@@ -14,7 +27,7 @@ target/
 .sts4-cache
 
 ### IntelliJ IDEA ###
-.idea
+.idea/
 *.iws
 *.iml
 *.ipr
@@ -25,9 +38,19 @@ target/
 /dist/
 /nbdist/
 /.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+# Gradle / build dirs
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-### VS Code ###
-.vscode/
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Otros
+HELP.md
