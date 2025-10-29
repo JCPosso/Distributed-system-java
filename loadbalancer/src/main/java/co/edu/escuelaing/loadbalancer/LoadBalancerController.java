@@ -1,4 +1,4 @@
-package co.edu.escuelaing.distributedsystem.loadbalancer;
+package co.edu.escuelaing.loadbalancer;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Map;
-
+import co.edu.escuelaing.loadbalancer.registry.ServerRegistry;
 @RestController
 public class LoadBalancerController {
 

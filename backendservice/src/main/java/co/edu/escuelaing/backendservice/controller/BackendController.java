@@ -1,11 +1,11 @@
-package co.edu.escuelaing.distributedsystem.backedservice.controller;
-
+package co.edu.escuelaing.backendservice.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.Instant;
 import java.util.Map;
+import co.edu.escuelaing.backendservice.ReplicatedMapService;
 
 @RestController
 public class BackendController {

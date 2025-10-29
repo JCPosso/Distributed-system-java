@@ -1,11 +1,12 @@
-package co.edu.escuelaing.distributedsystem.loadbalancer;
-
+package co.edu.escuelaing.backendservice;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LoadBalancerApplication {
+public class DistributedSystemApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(LoadBalancerApplication.class, args);
+        SpringApplication.run(DistributedSystemApplication.class, args);
     }
+
 }

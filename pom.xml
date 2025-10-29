@@ -12,6 +12,10 @@
 	<artifactId>distributedsystem</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
+	<modules>
+		<module>loadbalancer</module>
+		<module>backendservice</module>
+	</modules>
 	<name>distributed-system</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
