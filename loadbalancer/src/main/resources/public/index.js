@@ -45,6 +45,10 @@ async function loadNames() {
             const userCell = document.createElement("td");
             userCell.textContent = entry.name ?? entry.user ?? entry.username ?? "";
 
+            const backendCell = document.createElement("td");
+            backendCell.textContent = entry.backend ?? "";
+            row.appendChild(backendCell);
+
             const dateCell = document.createElement("td");
             const rawDate = entry.timestamp ?? entry.date ?? "";
             let formatted = rawDate;
@@ -57,6 +61,7 @@ async function loadNames() {
             dateCell.textContent = formatted;
 
             row.appendChild(idCell);
+            row.appendChild(backendCell);
             row.appendChild(userCell);
             row.appendChild(dateCell);
 

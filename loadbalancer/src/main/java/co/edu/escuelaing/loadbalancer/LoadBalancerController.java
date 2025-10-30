@@ -5,7 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.core.ParameterizedTypeReference;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import co.edu.escuelaing.loadbalancer.registry.ServerRegistry;
 @RestController
@@ -37,5 +40,28 @@ public class LoadBalancerController {
     @GetMapping("/backends")
     public ResponseEntity<?> getBackends() {
         return ResponseEntity.ok(registry.getBackends());
+    }
+
+    @GetMapping("/names")
+    public List<Map<String, Object>> getAllNames() {
+        List<String> backends = registry.getBackends();
+        List<Map<String, Object>> allNames = new ArrayList<>();
+        for (String backend : backends) {
+            try {
+                String url = backend + "/names";
+                ResponseEntity<List<Map<String, Object>>> responseEntity =
+                        restTemplate.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<List<Map<String, Object>>>() {});
+                List<Map<String, Object>> response = responseEntity.getBody();
+                if (response != null) {
+                    for (Map<String, Object> item : response) {
+                        item.put("backend", backend);
+                        allNames.add(item);
+                    }
+                }
+            } catch (Exception e) {
+                System.err.println("Error fetching from " + backend + ": " + e.getMessage());
+            }
+        }
+        return allNames;
     }
 }
