@@ -23,6 +23,8 @@
     <div class="container">
         <h1 class="text-center text-light font-weight-bold">MessageApp</h1>
         <br/>
+        <div id="status" class="alert alert-info text-center" role="status" style="display:none;"></div>
+        <br/>
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-10">
                 <form id="myform" class="card card-sm" >
@@ -30,10 +32,6 @@
                         <!--end of col-->
                         <div class="col-md-3">
                             <input id="data-name" name="data-name" class="form-control form-control-lg form-control-borderless" placeholder="Type your name">
-                        </div>
-                        <!--end of col-->
-                        <div class="col">
-                            <input id="data-message" name="data-message" class="form-control form-control-lg form-control-borderless" placeholder="Type a message">
                         </div>
                         <!--end of col-->
                         <div class="col-auto">
@@ -50,7 +48,6 @@
                         <tr>
                             <th scope="col" data-field="id">id</th>
                             <th scope="col" data-field="user">User</th>
-                            <th scope="col" data-field="message">Message</th>
                             <th scope="col" data-field="date">date</th>
                         </tr>
                         </thead>
