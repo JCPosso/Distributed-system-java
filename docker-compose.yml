@@ -3,7 +3,7 @@ services:
     build: ./loadbalancer
     container_name: load-balancer
     ports:
-      - "8080:8080"
+      - "8080:8081"
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     depends_on:
@@ -18,7 +18,7 @@ services:
     environment:
       - SERVER_PORT=8081
       - PUBLIC_IP=backend1
-      - LOADBALANCER_URL=http://load-balancer:8080
+      - LOADBALANCER_URL=http://load-balancer:8081
 
   backend2:
     build: ./backendservice
@@ -28,4 +28,4 @@ services:
     environment:
       - SERVER_PORT=8081
       - PUBLIC_IP=backend2
-      - LOADBALANCER_URL=http://load-balancer:8080
+      - LOADBALANCER_URL=http://load-balancer:8081
