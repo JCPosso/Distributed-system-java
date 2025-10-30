@@ -3,12 +3,15 @@ services:
     build: ./loadbalancer
     container_name: load-balancer
     ports:
-      - "8080:8081"
+      - "8080:8080"
     environment:
       - SPRING_PROFILES_ACTIVE=docker
-    depends_on:
-      - backend1
-      - backend2
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
 
   backend1:
     build: ./backendservice
@@ -18,7 +21,10 @@ services:
     environment:
       - SERVER_PORT=8081
       - PUBLIC_IP=backend1
-      - LOADBALANCER_URL=http://load-balancer:8081
+      - LOADBALANCER_URL=http://load-balancer:8080
+    depends_on:
+      load-balancer:
+        condition: service_healthy
 
   backend2:
     build: ./backendservice
@@ -28,4 +34,7 @@ services:
     environment:
       - SERVER_PORT=8081
       - PUBLIC_IP=backend2
-      - LOADBALANCER_URL=http://load-balancer:8081
+      - LOADBALANCER_URL=http://load-balancer:8080
+    depends_on:
+      load-balancer:
+        condition: service_healthy
