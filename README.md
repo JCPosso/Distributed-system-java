@@ -78,7 +78,6 @@ Resumen de pasos (más detalles en documentación adicional):
 3. Crear una instancia EC2 y abrir puertos necesarios (35000, 35001, 35002, 35003, 27017 si usa MongoDB).
 4. En la instancia EC2 instalar Docker y ejecutar `docker run -d -p <host_port>:<container_port> <imagen>` o desplegar con `docker-compose` si subes el `docker-compose.yml`.
 
-(Dejar espacio para capturas de pantalla o pasos específicos de la cuenta AWS)
 ![Evidencia - AWS](./img/aws-evidencia.png)
 
 Pruebas y verificación
@@ -99,7 +98,6 @@ docker-compose down
 
 Evidencias / Capturas
 ---------------------
-Deja aquí las imágenes o enlaces a evidencias (pantallazos, logs, resultados de pruebas).
 
 - Evidencia: Interfaz cliente / captura
   ![Evidencia - Cliente](./img/cliente-captura.png)
