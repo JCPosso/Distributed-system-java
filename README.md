@@ -17,7 +17,6 @@ Diagrama
                               -> Backend Instance 2
                               -> Backend Instance 3
 
-(Añadir aquí imagen del diagrama o arquitectura)
 ![Evidencia - Arquitectura](./img/arquitectura.png)
 
 Requisitos previos
@@ -63,20 +62,12 @@ docker ps
 docker images
 ```
 
-Configuración
--------------
-- Puertos: la aplicación utiliza puertos definidos en `docker-compose.yml` y en `src/main/resources/application.properties` de cada módulo. Revisa esos archivos para ajustar mapeos.
-- Variables de entorno: si usas Docker, puede que los servicios acepten variables (por ejemplo, URL de Mongo). Añade o modifica en `docker-compose.yml`.
-- Load Balancer: revisa `loadbalancer/src/main/java/.../LoadBalancerController.java` y `registry/ServerRegistry.java` para entender cómo se registran/descubren las instancias de backend.
-
-Despliegue en AWS (puntos clave)
+Despliegue en AWS
 -------------------------------
-Resumen de pasos (más detalles en documentación adicional):
-
 1. Construir imágenes Docker y taggearlas para Docker Hub.
 2. Push de imágenes a Docker Hub.
 3. Crear una instancia EC2 y abrir puertos necesarios (35000, 35001, 35002, 35003, 27017 si usa MongoDB).
-4. En la instancia EC2 instalar Docker y ejecutar `docker run -d -p <host_port>:<container_port> <imagen>` o desplegar con `docker-compose` si subes el `docker-compose.yml`.
+4. En la instancia EC2 instalar Docker y ejecutar `docker run -d -p <host_port>:<container_port> <imagen>` o desplegar con `docker-compose`.
 
 ![Evidencia - AWS](./img/aws-evidencia.png)
 
@@ -117,4 +108,4 @@ Juan Camilo Posso Guevara
 
 Licencia
 --------
-Licencia bajo GNU General Public License (ver `LICENSE` si aplica).
+Licencia bajo GNU General Public License.
