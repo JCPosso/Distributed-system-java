@@ -119,7 +119,7 @@ Para el **Load Balancer**, el Security Group:
 
 ![docker-aws](./img/dockerrules1.png)
 
-Security Group de Backends: permite inbound desde el SG del Load Balancer en el puerto de la aplicación (ej. `8080`) y permite tráfico entre miembros del SG en los puertos usados por JGroups (ej. `7800` TCP).
+Security Group de Backends: permite inbound desde el SG del Load Balancer en el puerto de la aplicación (ej. `8081`) y permite tráfico entre miembros del SG en los puertos usados por JGroups (ej. `7800` TCP).
 
 Para el **Backend**, el Security Group:
   Inbound Rules:
@@ -176,7 +176,3 @@ Archivos importantes
 Autor
 -----
 Juan Camilo Posso Guevara
-
-Licencia
---------
-Revisa `LICENSE` en el repositorio (si aplica).
